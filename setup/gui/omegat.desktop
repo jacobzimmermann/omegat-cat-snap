@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=OmegaT
+Comment=A simple, open-source CAT tool
+Keywords=cat;translation;
+Terminal=false
+Type=Application
+Icon=${SNAP}/meta/gui/omegat.svg
+Exec=omegat
