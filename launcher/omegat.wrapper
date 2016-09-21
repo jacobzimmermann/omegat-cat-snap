@@ -9,14 +9,4 @@ fi
 
 export _JAVA_OPTIONS="-Duser.home=$SNAP_USER_DATA $_JAVA_OPTIONS"
 export PATH=$PATH:$SNAP/usr/lib/jvm/java-8-openjdk-amd64/bin/
-
-# https://bugs.launchpad.net/bugs/1576303 
-# Not good, needed for fontconfig
-export XDG_DATA_HOME=$SNAP/usr/share
-
-# Font Config
-export FONTCONFIG_PATH=$SNAP/etc/fonts/config.d
-export FONTCONFIG_FILE=$SNAP/etc/fonts/fonts.conf
-
-exec "$SNAP/OmegaT" "$@"
-
+exec sh "$SNAP/OmegaT" "$@"

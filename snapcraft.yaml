@@ -1,12 +1,8 @@
 name: omegat
-version: 3.6.0~2.0
+version: 4.0.0-1.0
 confinement: strict
-architectures:
-  - amd64
 epoch: 0
-icon: setup/gui/omegat.svg
-license: setup/jre-COPYRIGHT
-license-agreement: explicit
+grade: stable
 
 summary: OmegaT, the free (GPL) translation memory tool
 description: |
@@ -22,29 +18,53 @@ apps:
 
 parts:
   omegat:
-    plugin: copy
-    source: 'https://sourceforge.net/projects/omegat/files/OmegaT - Latest/OmegaT 3.6.0 update 2/OmegaT_3.6.0_02_Beta_Linux_64.tar.bz2'
-    files:
-      .: .
+    plugin: dump
+    source: http://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.0.0%20update%201/OmegaT_4.0.0_01_Beta_Without_JRE.zip
     snap:
       - OmegaT
       - OmegaT.jar
-      - jre
       - docs
       - images
       - lib
       - plugins
       - scripts
+    organize:
+      OmegaT_4.0.0_01_Beta_Without_JRE/OmegaT: OmegaT
+      OmegaT_4.0.0_01_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
+      OmegaT_4.0.0_01_Beta_Without_JRE/docs: docs
+      OmegaT_4.0.0_01_Beta_Without_JRE/images: images
+      OmegaT_4.0.0_01_Beta_Without_JRE/lib: lib
+      OmegaT_4.0.0_01_Beta_Without_JRE/plugins: plugins
+      OmegaT_4.0.0_01_Beta_Without_JRE/scripts: scripts
     after:
-      - desktop/gtk2
+      - desktop-gtk2
   runtime:
     plugin: nil
     stage-packages:
-      - hunspell
-      - hunspell-fr-comprehensive
-      - hunspell-cs
-      - libxtst6
+      - openjdk-8-jre
+      - fonts-dejavu-extra
+    snap:
+      - -var
+      - -usr/share/bash-completion
+      - -usr/share/bug
+      - -usr/share/doc
+      - -usr/share/doc-base
+      - -usr/share/lintian
+      - -usr/share/man
+
   launcher:
-    plugin: copy
-    files:
+    plugin: dump
+    source: launcher
+    organize:
       omegat.wrapper: bin/omegat
+
+  desktop-gtk2:
+    snap:
+      - -var
+      - -usr/share/bash-completion
+      - -usr/share/bug
+      - -usr/share/doc
+      - -usr/share/doc-base
+      - -usr/share/lintian
+      - -usr/share/man
+
