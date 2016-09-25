@@ -1,5 +1,5 @@
 name: omegat
-version: 4.0.0-1.0
+version: 4.0.0-1.1
 confinement: strict
 epoch: 0
 grade: stable
@@ -38,10 +38,13 @@ parts:
       OmegaT_4.0.0_01_Beta_Without_JRE/scripts: scripts
     after:
       - desktop-gtk2
+      - runtime
+
   runtime:
     plugin: nil
     stage-packages:
       - openjdk-8-jre
+      - ca-certificates-java
       - fonts-dejavu-extra
     snap:
       - -var
@@ -51,12 +54,20 @@ parts:
       - -usr/share/doc-base
       - -usr/share/lintian
       - -usr/share/man
+    stage:
+      - -usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts
 
   launcher:
     plugin: dump
     source: launcher
     organize:
       omegat.wrapper: bin/omegat
+
+  cacerts:
+    plugin: dump
+    source: cacerts
+    organize:
+      cacerts: usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/
 
   desktop-gtk2:
     snap:
