@@ -1,4 +1,4 @@
-name: omegat
+name: omegat-cat
 version: 4.0.0-1.1
 confinement: strict
 epoch: 0
