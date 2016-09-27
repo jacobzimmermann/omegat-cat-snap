@@ -1,0 +1,12 @@
+#!/bin/sh
+
+OPTSFILE="$SNAP_USER_COMMON/cli-options.conf"
+echo Checking for $OPTSFILE
+if [ -e "$OPTSFILE" ]
+then
+	_JAVA_OPTIONS=$(cat "$OPTSFILE")
+fi
+
+export _JAVA_OPTIONS="-Duser.home=$SNAP_USER_DATA $_JAVA_OPTIONS"
+export PATH=$PATH:$SNAP/usr/lib/jvm/java-8-openjdk-amd64/bin/
+exec sh "$SNAP/OmegaT" "$@"
