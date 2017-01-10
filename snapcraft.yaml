@@ -1,5 +1,5 @@
 name: omegat-cat
-version: 4.1.0-0
+version: 4.1.0-1
 confinement: strict
 epoch: 0
 grade: stable
@@ -19,7 +19,7 @@ apps:
 parts:
   omegat:
     plugin: dump
-    source: OmegaT_4.1.0_Beta_Linux_64
+    source: http://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.0/OmegaT_4.1.0_Beta_Without_JRE.zip
     snap:
       - OmegaT
       - OmegaT.jar
@@ -28,6 +28,14 @@ parts:
       - lib
       - plugins
       - scripts
+    organize:
+      OmegaT_4.1.0_Beta_Without_JRE/OmegaT: OmegaT
+      OmegaT_4.1.0_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
+      OmegaT_4.1.0_Beta_Without_JRE/docs: docs
+      OmegaT_4.1.0_Beta_Without_JRE/images: images
+      OmegaT_4.1.0_Beta_Without_JRE/lib: lib
+      OmegaT_4.1.0_Beta_Without_JRE/plugins: plugins
+      OmegaT_4.1.0_Beta_Without_JRE/scripts: scripts
     after:
       - desktop-gtk2
       - runtime
