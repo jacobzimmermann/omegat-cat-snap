@@ -1,5 +1,5 @@
 name: omegat-cat
-version: 4.1.0-1
+version: 4.1.1-0
 confinement: strict
 epoch: 0
 grade: stable
@@ -19,8 +19,8 @@ apps:
 parts:
   omegat:
     plugin: dump
-    source: http://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.0/OmegaT_4.1.0_Beta_Without_JRE.zip
-    snap:
+    source: http://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.1/OmegaT_4.1.1_Beta_Without_JRE.zip
+    prime:
       - OmegaT
       - OmegaT.jar
       - docs
@@ -29,13 +29,13 @@ parts:
       - plugins
       - scripts
     organize:
-      OmegaT_4.1.0_Beta_Without_JRE/OmegaT: OmegaT
-      OmegaT_4.1.0_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
-      OmegaT_4.1.0_Beta_Without_JRE/docs: docs
-      OmegaT_4.1.0_Beta_Without_JRE/images: images
-      OmegaT_4.1.0_Beta_Without_JRE/lib: lib
-      OmegaT_4.1.0_Beta_Without_JRE/plugins: plugins
-      OmegaT_4.1.0_Beta_Without_JRE/scripts: scripts
+      OmegaT_4.1.1_Beta_Without_JRE/OmegaT: OmegaT
+      OmegaT_4.1.1_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
+      OmegaT_4.1.1_Beta_Without_JRE/docs: docs
+      OmegaT_4.1.1_Beta_Without_JRE/images: images
+      OmegaT_4.1.1_Beta_Without_JRE/lib: lib
+      OmegaT_4.1.1_Beta_Without_JRE/plugins: plugins
+      OmegaT_4.1.1_Beta_Without_JRE/scripts: scripts
     after:
       - desktop-gtk2
       - runtime
@@ -46,7 +46,7 @@ parts:
       - openjdk-8-jre
       - ca-certificates-java
       - fonts-dejavu-extra
-    snap:
+    prime:
       - -var
       - -usr/share/bash-completion
       - -usr/share/bug
@@ -70,7 +70,7 @@ parts:
       cacerts: usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/
 
   desktop-gtk2:
-    snap:
+    prime:
       - -var
       - -usr/share/bash-completion
       - -usr/share/bug
