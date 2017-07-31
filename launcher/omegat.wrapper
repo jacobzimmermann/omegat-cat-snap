@@ -8,5 +8,5 @@ then
 fi
 
 export _JAVA_OPTIONS="-Duser.home=$SNAP_USER_DATA $_JAVA_OPTIONS"
-export PATH=$PATH:$SNAP/java/bin/
+export PATH=$PATH:$SNAP/usr/lib/jvm/java/bin/
 exec sh "$SNAP/OmegaT" "$@"

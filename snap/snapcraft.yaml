@@ -1,5 +1,5 @@
 name: omegat-cat
-version: 4.1.2-1
+version: 4.1.2-2
 confinement: strict
 epoch: 0
 grade: stable
@@ -44,10 +44,9 @@ parts:
     plugin: nil
     stage-packages:
       - openjdk-8-jre
-      - ca-certificates-java
       - fonts-dejavu-extra
     organize:
-      usr/lib/jvm/java-8*: java
+      usr/lib/jvm/java-8*: usr/lib/jvm/java
     prime:
       - -var
       - -usr/share/bash-completion
@@ -56,9 +55,9 @@ parts:
       - -usr/share/doc-base
       - -usr/share/lintian
       - -usr/share/man
-    stage:
-      - -usr/lib/jvm/
-      - -java/jre/lib/security/cacerts
+      - -usr/lib/jvm/java/jre/lib/security/cacerts
+      - -usr/lib/jvm/java/jre/docs
+      - -usr/lib/jvm/java//man
 
   launcher:
     plugin: dump
@@ -70,7 +69,7 @@ parts:
     plugin: dump
     source: cacerts
     organize:
-      cacerts: java/jre/lib/security/
+      cacerts: usr/lib/jvm/java/jre/lib/security/
 
   desktop-gtk2:
     prime:
