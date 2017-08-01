@@ -55,9 +55,11 @@ parts:
       - -usr/share/doc-base
       - -usr/share/lintian
       - -usr/share/man
-      - -usr/lib/jvm/java/jre/lib/security/cacerts
-      - -usr/lib/jvm/java/jre/docs
-      - -usr/lib/jvm/java//man
+      - -usr/lib/jvm/*/jre/lib/security/cacerts
+      - -usr/lib/jvm/*/jre/docs
+      - -usr/lib/jvm/*/man
+    install: |
+      find $SNAPCRAFT_PART_INSTALL -type l -name cacerts -delete
 
   launcher:
     plugin: dump
@@ -69,7 +71,7 @@ parts:
     plugin: dump
     source: cacerts
     organize:
-      cacerts: usr/lib/jvm/java/jre/lib/security/
+      cacerts: usr/lib/jvm/java/jre/lib/security/cacerts
 
   desktop-gtk2:
     prime:
