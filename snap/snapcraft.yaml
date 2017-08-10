@@ -1,5 +1,5 @@
 name: omegat-cat
-version: 4.1.2-2
+version: 4.1.2.1-0
 confinement: strict
 epoch: 0
 grade: stable
@@ -19,7 +19,7 @@ apps:
 parts:
   omegat:
     plugin: dump
-    source: http://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.2/OmegaT_4.1.2_Beta_Without_JRE.zip
+    source: https://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.2%20update%201/OmegaT_4.1.2_01_Beta_Without_JRE.zip
     prime:
       - OmegaT
       - OmegaT.jar
@@ -29,13 +29,13 @@ parts:
       - plugins
       - scripts
     organize:
-      OmegaT_4.1.2_Beta_Without_JRE/OmegaT: OmegaT
-      OmegaT_4.1.2_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
-      OmegaT_4.1.2_Beta_Without_JRE/docs: docs
-      OmegaT_4.1.2_Beta_Without_JRE/images: images
-      OmegaT_4.1.2_Beta_Without_JRE/lib: lib
-      OmegaT_4.1.2_Beta_Without_JRE/plugins: plugins
-      OmegaT_4.1.2_Beta_Without_JRE/scripts: scripts
+      OmegaT_4.1.2_01_Beta_Without_JRE/OmegaT: OmegaT
+      OmegaT_4.1.2_01_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
+      OmegaT_4.1.2_01_Beta_Without_JRE/docs: docs
+      OmegaT_4.1.2_01_Beta_Without_JRE/images: images
+      OmegaT_4.1.2_01_Beta_Without_JRE/lib: lib
+      OmegaT_4.1.2_01_Beta_Without_JRE/plugins: plugins
+      OmegaT_4.1.2_01_Beta_Without_JRE/scripts: scripts
     after:
       - desktop-gtk2
       - runtime
@@ -45,6 +45,8 @@ parts:
     stage-packages:
       - openjdk-8-jre
       - fonts-dejavu-extra
+      - gtk2-engines-pixbuf
+      - libpng12-0
     organize:
       usr/lib/jvm/java-8*: usr/lib/jvm/java
     prime:

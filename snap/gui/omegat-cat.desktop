@@ -4,6 +4,7 @@ Name=OmegaT
 Comment=A simple, open-source CAT tool
 Keywords=cat;translation;
 Terminal=false
+Categories=Office;
 Type=Application
 Icon=${SNAP}/meta/gui/omegat-cat.svg
 Exec=omegat-cat.omegat
