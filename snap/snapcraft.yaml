@@ -1,5 +1,5 @@
 name: omegat-cat
-version: 4.1.2.1-1
+version: 4.1.2.2-0
 confinement: strict
 epoch: 0
 grade: stable
@@ -17,15 +17,15 @@ apps:
     plugs: [home, network, unity7]
 
 plugs:
-    gnome-3-24-platform:
+    gnome-3-26-1604:
       interface: content
       target: $SNAP/gnome-platform
-      default-provider: gnome-3-24:gnome-3-24-platform
+      default-provider: gnome-3-26-1604:gnome-3-26-1604
 
 parts:
   omegat:
     plugin: dump
-    source: https://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.2%20update%201/OmegaT_4.1.2_01_Beta_Without_JRE.zip
+    source: https://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.2%20update%202/OmegaT_4.1.2_02_Beta_Without_JRE.zip
     prime:
       - OmegaT
       - OmegaT.jar
@@ -35,13 +35,13 @@ parts:
       - plugins
       - scripts
     organize:
-      OmegaT_4.1.2_01_Beta_Without_JRE/OmegaT: OmegaT
-      OmegaT_4.1.2_01_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
-      OmegaT_4.1.2_01_Beta_Without_JRE/docs: docs
-      OmegaT_4.1.2_01_Beta_Without_JRE/images: images
-      OmegaT_4.1.2_01_Beta_Without_JRE/lib: lib
-      OmegaT_4.1.2_01_Beta_Without_JRE/plugins: plugins
-      OmegaT_4.1.2_01_Beta_Without_JRE/scripts: scripts
+      OmegaT_4.1.2_02_Beta_Without_JRE/OmegaT: OmegaT
+      OmegaT_4.1.2_02_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
+      OmegaT_4.1.2_02_Beta_Without_JRE/docs: docs
+      OmegaT_4.1.2_02_Beta_Without_JRE/images: images
+      OmegaT_4.1.2_02_Beta_Without_JRE/lib: lib
+      OmegaT_4.1.2_02_Beta_Without_JRE/plugins: plugins
+      OmegaT_4.1.2_02_Beta_Without_JRE/scripts: scripts
     after:
       - runtime
 
@@ -94,13 +94,10 @@ parts:
     build-packages:
       - libgtk-3-dev
     source: https://github.com/kenvandine/snapcraft-desktop-helpers.git
-    source-branch: gnome-3-24
     install: mkdir -p $SNAPCRAFT_PART_INSTALL/gnome-platform
 
   # workaround snapcraft trying to outsmart us by copying ldd listed libraries
   workaround:
     plugin: nil
-    stage-packages:
-      - libgtk2.0-0
     prime:
       - "-*"
