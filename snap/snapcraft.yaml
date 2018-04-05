@@ -1,5 +1,5 @@
 name: omegat-cat
-version: 4.1.3.2
+version: 4.1.4
 confinement: strict
 epoch: 0
 grade: stable
@@ -25,7 +25,7 @@ plugs:
 parts:
   omegat:
     plugin: dump
-    source: https://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.3%20update%202/OmegaT_4.1.3_02_Beta_Without_JRE.zip
+    source: https://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.4/OmegaT_4.1.4_Beta_Without_JRE.zip
     prime:
       - OmegaT
       - OmegaT.jar
