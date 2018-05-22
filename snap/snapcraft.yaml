@@ -48,11 +48,11 @@ parts:
   runtime:
     plugin: nil
     stage-packages:
-      - openjdk-8-jre
+      - openjdk-11-jre
     after:
       - desktop-gnome-platform
     organize:
-      usr/lib/jvm/java-8*: usr/lib/jvm/java
+      usr/lib/jvm/java-11*: usr/lib/jvm/java
     prime:
       - -var
       - -snap
@@ -69,7 +69,8 @@ parts:
       - -usr/lib/jvm/*/jre/lib/security/cacerts
       - -usr/lib/jvm/*/jre/docs
       - -usr/lib/jvm/*/man
-    install: |
+    override-build: |
+      snapcraftctl build
       find $SNAPCRAFT_PART_INSTALL -type l -name cacerts -delete
 
   launcher:
