@@ -48,7 +48,7 @@ parts:
   runtime:
     plugin: nil
     stage-packages:
-      - openjdk-11-jre
+      - default-jre
     after:
       - desktop-gnome-platform
     organize:
