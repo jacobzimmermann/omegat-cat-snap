@@ -59,6 +59,8 @@ parts:
       OmegaT_4.1.5_01_Beta_Without_JRE/scripts: scripts
     after:
       - runtime
+    build-attributes:
+      - no-system-libraries
 
   runtime:
     plugin: nil
@@ -87,6 +89,8 @@ parts:
     override-build: |
       snapcraftctl build
       find $SNAPCRAFT_PART_INSTALL -type l -name cacerts -delete
+    build-attributes:
+      - no-system-libraries
 
   launcher:
     plugin: dump
