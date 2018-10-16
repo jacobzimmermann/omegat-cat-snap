@@ -50,13 +50,13 @@ parts:
       - plugins
       - scripts
     organize:
-      OmegaT_4.1.5_01_Beta_Without_JRE/OmegaT: OmegaT
-      OmegaT_4.1.5_01_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
-      OmegaT_4.1.5_01_Beta_Without_JRE/docs: docs
-      OmegaT_4.1.5_01_Beta_Without_JRE/images: images
-      OmegaT_4.1.5_01_Beta_Without_JRE/lib: lib
-      OmegaT_4.1.5_01_Beta_Without_JRE/plugins: plugins
-      OmegaT_4.1.5_01_Beta_Without_JRE/scripts: scripts
+      OmegaT_4.1.5_02_Beta_Without_JRE/OmegaT: OmegaT
+      OmegaT_4.1.5_02_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
+      OmegaT_4.1.5_02_Beta_Without_JRE/docs: docs
+      OmegaT_4.1.5_02_Beta_Without_JRE/images: images
+      OmegaT_4.1.5_02_Beta_Without_JRE/lib: lib
+      OmegaT_4.1.5_02_Beta_Without_JRE/plugins: plugins
+      OmegaT_4.1.5_02_Beta_Without_JRE/scripts: scripts
     after:
       - runtime
     build-attributes:
