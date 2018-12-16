@@ -1,5 +1,5 @@
 name: omegat-cat
-version: 4.1.5.3
+version: '4.1.5.3'
 confinement: strict
 epoch: 0
 grade: stable
