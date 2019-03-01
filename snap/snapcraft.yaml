@@ -1,5 +1,5 @@
 name: omegat-cat
-version: '4.1.5.3'
+version: '4.1.5.4'
 confinement: strict
 epoch: 0
 grade: stable
@@ -39,11 +39,12 @@ environment:
     XDG_DATA_DIRS: $SNAP/data-dir:$XDG_DATA_DIRS
     GSETTINGS_SCHEMA_DIR: $SNAP/share/glib-2.0/schemas
     LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/lib/omegat-cat
+    GTK_USE_PORTAL: 1
 
 parts:
   omegat:
     plugin: dump
-    source: https://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.5%20update%203/OmegaT_4.1.5_03_Beta_Without_JRE.zip
+    source: https://sourceforge.net/projects/omegat/files/OmegaT%20-%20Latest/OmegaT%204.1.5%20update%204/OmegaT_4.1.5_04_Beta_Without_JRE.zip
     prime:
       - OmegaT
       - OmegaT.jar
@@ -53,13 +54,13 @@ parts:
       - plugins
       - scripts
     organize:
-      OmegaT_4.1.5_03_Beta_Without_JRE/OmegaT: OmegaT
-      OmegaT_4.1.5_03_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
-      OmegaT_4.1.5_03_Beta_Without_JRE/docs: docs
-      OmegaT_4.1.5_03_Beta_Without_JRE/images: images
-      OmegaT_4.1.5_03_Beta_Without_JRE/lib: lib
-      OmegaT_4.1.5_03_Beta_Without_JRE/plugins: plugins
-      OmegaT_4.1.5_03_Beta_Without_JRE/scripts: scripts
+      OmegaT_4.1.5_04_Beta_Without_JRE/OmegaT: OmegaT
+      OmegaT_4.1.5_04_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
+      OmegaT_4.1.5_04_Beta_Without_JRE/docs: docs
+      OmegaT_4.1.5_04_Beta_Without_JRE/images: images
+      OmegaT_4.1.5_04_Beta_Without_JRE/lib: lib
+      OmegaT_4.1.5_04_Beta_Without_JRE/plugins: plugins
+      OmegaT_4.1.5_04_Beta_Without_JRE/scripts: scripts
     after:
       - runtime
 
