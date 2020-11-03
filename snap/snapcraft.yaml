@@ -3,7 +3,7 @@ version: '5.3.0'
 confinement: strict
 epoch: 0
 grade: stable
-base: core18
+base: core20
 
 summary: OmegaT, the free (GPL) translation memory tool
 description: |
@@ -14,7 +14,7 @@ description: |
 
 apps:
   omegat:
-    command: desktop-launch omegat
+    command: bin/desktop-launch $SNAP/bin/omegat
     plugs: [home, network, desktop, wayland, desktop-legacy, x11]
 
 plugs:
