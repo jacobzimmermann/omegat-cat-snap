@@ -1,5 +1,5 @@
 name: omegat-cat
-version: '5.3.0'
+version: '5.4.1'
 confinement: strict
 epoch: 0
 grade: stable
@@ -44,7 +44,7 @@ environment:
 parts:
   omegat:
     plugin: dump
-    source: https://jaist.dl.sourceforge.net/project/omegat/OmegaT%20-%20Latest/OmegaT%205.3.0/OmegaT_5.3.0_Beta_Without_JRE.zip
+    source: https://jaist.dl.sourceforge.net/project/omegat/OmegaT%20-%20Latest/OmegaT%205.4.1/OmegaT_5.4.1_Beta_Without_JRE.zip
     prime:
       - OmegaT
       - OmegaT.jar
@@ -54,13 +54,13 @@ parts:
       - plugins
       - scripts
     organize:
-      OmegaT_5.3.0_Beta_Without_JRE/OmegaT: OmegaT
-      OmegaT_5.3.0_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
-      OmegaT_5.3.0_Beta_Without_JRE/docs: docs
-      OmegaT_5.3.0_Beta_Without_JRE/images: images
-      OmegaT_5.3.0_Beta_Without_JRE/lib: lib
-      OmegaT_5.3.0_Beta_Without_JRE/plugins: plugins
-      OmegaT_5.3.0_Beta_Without_JRE/scripts: scripts
+      OmegaT_5.4.1_Beta_Without_JRE/OmegaT: OmegaT
+      OmegaT_5.4.1_Beta_Without_JRE/OmegaT.jar: OmegaT.jar
+      OmegaT_5.4.1_Beta_Without_JRE/docs: docs
+      OmegaT_5.4.1_Beta_Without_JRE/images: images
+      OmegaT_5.4.1_Beta_Without_JRE/lib: lib
+      OmegaT_5.4.1_Beta_Without_JRE/plugins: plugins
+      OmegaT_5.4.1_Beta_Without_JRE/scripts: scripts
     after:
       - runtime
 
